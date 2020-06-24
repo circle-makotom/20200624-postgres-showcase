@@ -5,11 +5,11 @@ jobs:
     docker:
       - image: archlinux/base
       - image: circleci/postgres:12
-        # environment:
-        #   POSTGRES_HOST_AUTH_METHOD: trust
+        environment:
+          POSTGRES_PASSWORD: password
     steps:
       - run:
           name: Demonstrate that Postgres is available as localhost without password
           command: |
             pacman -Syu --noconfirm postgresql
-            psql -h localhost -U postgres -w -c '\l'
+            psql -h localhost -U postgres -p password -c '\l'
