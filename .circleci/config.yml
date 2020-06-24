@@ -6,7 +6,7 @@ jobs:
       - image: archlinux/base
       - image: circleci/postgres:12
         environment:
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: $POSTGRES_PASSWORD
     steps:
       - run:
           name: Demonstrate that Postgres is available as localhost without password
