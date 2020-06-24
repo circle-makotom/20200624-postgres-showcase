@@ -12,4 +12,4 @@ jobs:
           name: Demonstrate that Postgres is available as localhost without password
           command: |
             pacman -Syu --noconfirm postgresql
-            psql -h localhost -U postgres -p password -c '\l'
+            psql -h localhost -U postgres -w -c '\l'
